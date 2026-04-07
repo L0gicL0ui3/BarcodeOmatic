@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "barcodomatic"
+version = "0.1.0"
+description = "A desktop barcode and internal ID management app built with Python and PyQt6."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "PyQt6==6.11.0",
+  "python-barcode[images]==0.16.1",
+  "Pillow==11.3.0",
+  "pandas==3.0.2",
+  "openpyxl==3.1.5",
+]
+
+[project.scripts]
+barcodomatic = "main:main"
+
+[tool.setuptools]
+py-modules = ["app", "barcode_dialog", "data_handler", "main", "upc_lookup"]
